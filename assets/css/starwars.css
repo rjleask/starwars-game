@@ -1,0 +1,39 @@
+body {}
+
+.container-fluid {
+    background-image: url("https://c1.staticflickr.com/6/5691/23597806325_599ee7f98f_b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.character_boxes {
+    height: 200px;
+    border: 1px solid red;
+    background-color: white;
+}
+
+.your_chr_box {
+    margin-right: 80%;
+    background-color: green;
+}
+
+.enemy_boxes {
+    background-color: red;
+}
+
+.defender_style {
+    background-color: gray;
+}
+
+.hp {
+    position: absolute;
+    bottom: 1%;
+    left: 38%;
+}
+
+.attack_button {
+    display: none;
+    width: 80px;
+    padding: 1%;
+}
