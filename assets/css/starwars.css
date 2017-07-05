@@ -1,39 +1,179 @@
 body {}
 
-.container-fluid {
-    background-image: url("https://c1.staticflickr.com/6/5691/23597806325_599ee7f98f_b.jpg");
+button {
+    border: none;
+    padding: 0.5%;
+    white-space: nowrap;
+    background: #fbd1cc;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: red;
+    border: 1px solid red;
+}
+
+button:focus {
+    outline: none;
+}
+
+p {
+    margin: 0;
+}
+
+.row {
+    text-align: center;
+    margin: 0 0;
+}
+
+.page_wrapper {
+    background-image: url("https://cssanimation.rocks/demo/starwars/images/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    padding-bottom: 30%;
+}
+
+.img_box {
+    width: 100%;
+    height: 100%;
+}
+
+.img_box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header_container {
+    background: #000;
+    border-bottom: 0.5px solid gold;
+}
+
+.header {
+    text-align: center;
+    font-size: 40px;
+    color: gold;
+    padding: 1%;
+}
+
+.defender_box {
+    width: 200px;
 }
 
 .character_boxes {
     height: 200px;
+    width: 200px;
+    padding: 20px;
     border: 1px solid red;
     background-color: white;
+    display: inline-block;
+    position: relative;
+}
+
+.character_boxes:hover {
+    background: #9eb5f5;
+    color: gold;
+    cursor: pointer;
 }
 
 .your_chr_box {
-    margin-right: 80%;
-    background-color: green;
+    background-color: #55e255;
 }
 
 .enemy_boxes {
-    background-color: red;
+    background-color: #fd3030;
 }
 
 .defender_style {
-    background-color: gray;
+    background-color: #007bf9;
 }
 
 .hp {
     position: absolute;
     bottom: 1%;
     left: 38%;
+    color: black;
+    font-weight: bold;
 }
 
 .attack_button {
     display: none;
-    width: 80px;
-    padding: 1%;
+    margin: 0 auto;
+}
+
+.attack_display {
+    color: gold;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.play_again {
+    display: none;
+}
+
+.name {
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 10%;
+}
+
+.attack {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    font-weight: bold;
+}
+
+.critical {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    font-weight: bold;
+}
+
+.headers {
+    font-size: 30px;
+}
+
+.pick_chr {
+    color: #25de0e;
+}
+
+.defender_title {
+    display: none;
+    color: #007bf9;
+}
+
+.pick_enemy {
+    display: none;
+    color: red;
+}
+
+.hp_display {
+    font-size: 120%;
+    color: #25de0e;
+}
+
+.luke_img {
+    background-image: url("../images/luke1.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.vader_img {
+    background-image: url("../images/vader1.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.maul_img {
+    background-image: url("../images/maul1.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.obi_img {
+    background-image: url("../images/obi1.jpg");
+    background-size: cover;
+    overflow: hidden;
 }

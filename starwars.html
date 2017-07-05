@@ -8,18 +8,44 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="header_container">
+        <section class="header">
+            <header>Starwars RPG</header>
+        </section>
+    </div>
+    <div class="page_wrapper">
         <div class="row row_one">
-            <div class="character_boxes col-lg-2 col-md-2" id="luke"><span>Luke</span><span class="hp"></span><span class="attack"></span>10-20</div>
-            <div class="character_boxes col-lg-2 col-md-2" id="vader"><span>Vader</span><span class="hp"></span><span class="attack">10-20</span>
+            <p class="pick_chr headers">Pick Your Character</p>
+            <div class="character_boxes" id="luke">
+                <div class="img_box luke_img"></div><span class="name">Luke Skywalker</span>
+                <p class="critical">Critical:58</p>
+                <p class="attack">ATK:30</p><span class="hp"></span></div>
+            <div class="character_boxes" id="vader">
+                <div class="img_box vader_img"></div><span class="name">Darth Vader</span>
+                <p class="critical">Critical:50</p>
+                <p class="attack">ATK:23</p><span class="hp"></span>
             </div>
-            <div class="character_boxes col-lg-2 col-md-2" id="maul">Maul</div>
-            <div class="character_boxes col-lg-2 col-md-2" id="obi">Obi Wan</div>
+            <div class="character_boxes" id="maul">
+                <div class="img_box maul_img"></div><span class="name">Darth Maul</span>
+                <p class="critical">Critical:60</p>
+                <p class="attack">ATK:25</p><span class="hp"></span></div>
+            <div class="character_boxes" id="obi">
+                <div class="img_box obi_img"></div><span class="name">Obi Wan</span>
+                <p class="critical">Critical:50</p>
+                <p class="attack">ATK:28</p><span class="hp"></span></div>
         </div>
         <div class="row row_two">
+            <p class="pick_enemy headers">Pick Your Enemy</p>
+        </div>
+        <div class="row row_three">
             <button class="attack_button">Attack!</button>
-            <div class="defender_box col-lg-2 col-md-2"></div>
+            <p class="defender_title headers">Defender</p>
+            <div class="defender_box"></div>
             <span class="attack_display"></span>
+            <span class="critical_message"></span>
+            <p class="hp_display_p hp_display"></p>
+            <span class="hp_display_span hp_display"></span>
+            <button class="play_again">Play Again?</button>
         </div>
     </div>
     <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
