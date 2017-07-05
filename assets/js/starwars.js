@@ -93,7 +93,6 @@ $(document).ready(function() {
             yourEnemyBox = lukeSkywalker;
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
-
         }
     });
     darthVader.on("click", function() {
@@ -112,7 +111,6 @@ $(document).ready(function() {
             yourEnemyBox = darthVader;
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
-
         }
 
     });
@@ -132,7 +130,6 @@ $(document).ready(function() {
             yourEnemyBox = darthMaul;
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
-
         }
     });
     obiWan.on("click", function() {
@@ -164,7 +161,6 @@ $(document).ready(function() {
         attackSequence();
     });
 
-
     function stageOne() {
         // make your selected chr be at the top of the row so always in the top left corner, then add the css class
         $(".row_one").append(yourChrBox);
@@ -191,6 +187,7 @@ $(document).ready(function() {
         defenderAttack = enemyDefender["attack"];
         defenderHp = enemyDefender["hp"];
     }
+
     // main function that runs all the attack scenarios
     function attackSequence() {
         // reset crit message
@@ -215,7 +212,6 @@ $(document).ready(function() {
         if (enemyCriticalChance >= 50) {
             enemyCritMultiplier();
             heCrit = true;
-
         }
         console.log((defenderHp - yourChrAttack), (yourChrHp - defenderAttack));
         defenderHp = defenderHp - yourChrAttack;
@@ -246,6 +242,7 @@ $(document).ready(function() {
             defenderBoxAlreadyInUse = false;
         }
     }
+
     // executes after an opponent is defeated
     function newDefender() {
         attackSequenceDisplaySpan.text("");
@@ -255,12 +252,14 @@ $(document).ready(function() {
         yourChrBox.find(".hp").text("HP:" + yourChrArr["hp"]);
 
     }
+
     // creates random number b/t specified attacks and is inclusive and both min and max
     function getRandomAttackNumber(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
     // adds the crit amount to your attack
     function yourCritMultiplier() {
         yourCritAttack = Math.round(yourChrAttack * (yourChrArr["critical"] / 100));
@@ -282,8 +281,8 @@ $(document).ready(function() {
         if (heCrit === true) {
             $(".critical_message").text("Defender got a Critical hit for " + defenderCritAttack + "!").css({ "color": "red", "font-size": "130%" });
         }
-
     }
+
     // function that changes chr photo and upgrades attack after each enemy defeated
     function chrUpgradeAndImageChange() {
         if (yourChrBox === lukeSkywalker && numEnemiesDefeated < 2) {
@@ -317,7 +316,6 @@ $(document).ready(function() {
             $(".obi_img").css("background-image", "url(assets/images/obi3.png)");
             yourChrArr["attack"] = 38;
         }
-
     }
 
     function gameOver() {
