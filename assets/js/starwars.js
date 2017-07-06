@@ -91,6 +91,8 @@ $(document).ready(function() {
             console.log(enemyDefender);
             // assigns the div box of luke to the enemy box
             yourEnemyBox = lukeSkywalker;
+            // removes the defender div box from the enemyDivBoxList so the enemies can be isolated
+            enemyDivBoxList.splice(enemyDivBoxList.indexOf(lukeSkywalker), 1);
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
         }
@@ -109,6 +111,8 @@ $(document).ready(function() {
             enemyDefender = allCharacters.splice(allCharacters.indexOf(darthVaderObj), 1)[0];
             console.log(enemyDefender);
             yourEnemyBox = darthVader;
+            // removes the defender div box from the enemyDivBoxList so the enemies can be isolated
+            enemyDivBoxList.splice(enemyDivBoxList.indexOf(darthVader), 1);
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
         }
@@ -128,6 +132,8 @@ $(document).ready(function() {
             enemyDefender = allCharacters.splice(allCharacters.indexOf(darthMaulObj), 1)[0];
             console.log(enemyDefender);
             yourEnemyBox = darthMaul;
+            // removes the defender div box from the enemyDivBoxList so the enemies can be isolated
+            enemyDivBoxList.splice(enemyDivBoxList.indexOf(darthMaul), 1);
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
         }
@@ -146,6 +152,8 @@ $(document).ready(function() {
             enemyDefender = allCharacters.splice(allCharacters.indexOf(obiWanObj), 1)[0];
             console.log(enemyDefender);
             yourEnemyBox = obiWan;
+            // removes the defender div box from the enemyDivBoxList so the enemies can be isolated
+            enemyDivBoxList.splice(enemyDivBoxList.indexOf(obiWan), 1);
             stageTwoDefender();
             defenderBoxAlreadyInUse = true;
         }
@@ -181,6 +189,7 @@ $(document).ready(function() {
         // accesses attack button makes it visable and places it above the defender box
         $(".attack_button").css("display", "block").insertBefore(yourEnemyBox);
         $(".defender_title").css("display", "block").insertAfter(".attack_button");
+        hideEnemies();
         // retrieves yourChr/yourEnemy attack/hp from original object and stores it in your chr attack/hp
         yourChrAttack = yourChrArr["attack"];
         yourChrHp = yourChrArr["hp"];
@@ -227,14 +236,18 @@ $(document).ready(function() {
             gameOver();
             // checks if you or your opponent wins
         } else if (defenderHp <= 0) {
+            alert("Enemy down! You feel experienced!");
             $(".critical_message").text("You Beat " + enemyDefender["name"] + "! Pick Your Next Enemy!").css({ "color": "gold", "font-size": "150%" });
             $(".hp_display").text("");
             attackButton.css("display", "none");
+            // displays the enemies for selection
             numEnemies--;
+            showEnemies();
             if (numEnemies === 0) {
                 $(".critical_message").text("Ultimate Champion!").css("font-size", "200%");
                 $(".play_again").css("display", "inline-block");
                 attackButton.css("display", "none");
+                $(".pick_enemy").css("display", "none");
             }
             numEnemiesDefeated++;
             newDefender();
@@ -338,5 +351,17 @@ $(document).ready(function() {
             });
         }
         return lukeHp, vaderHp, maulHp, obiHp;
+    }
+
+    function showEnemies() {
+        for (var i = 0; i < enemyDivBoxList.length; i++) {
+            enemyDivBoxList[i].css("display", "inline-block");
+        }
+    }
+
+    function hideEnemies() {
+        for (var i = 0; i < enemyDivBoxList.length; i++) {
+            enemyDivBoxList[i].css("display", "none");
+        }
     }
 });
