@@ -297,6 +297,7 @@ $(document).ready(function() {
     }
 
     // function that changes chr photo and upgrades attack after each enemy defeated
+    // put images in array, save to variable, save that variable to another variable holding all characters
     function chrUpgradeAndImageChange() {
         if (yourChrBox === lukeSkywalker && numEnemiesDefeated < 2) {
             $(".luke_img").css({ "background-image": "url(assets/images/luke2.jpg" });

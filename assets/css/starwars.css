@@ -177,3 +177,70 @@ p {
     background-size: cover;
     overflow: hidden;
 }
+
+
+/*container for starwars writing, contorls position and degree of writing*/
+
+#titles {
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: 70%;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 350%;
+    font-weight: bold;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(25deg);
+    z-index: 5;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: perspective(300px) rotateX(25deg);
+    -moz-transform: perspective(300px) rotateX(25deg);
+    -ms-transform: perspective(300px) rotateX(25deg);
+    -o-transform: perspective(300px) rotateX(25deg);
+    transform: perspective(300px) rotateX(25deg);
+}
+
+#titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+
+/*controls speed of animation*/
+
+#titlecontent {
+    position: absolute;
+    top: 100%;
+    animation: scroll 200s linear 2s;
+    z-index: 5;
+    color: gold;
+}
+
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -170%;
+    }
+}
+
+@media (max-width: 1000px) {
+    #titles,
+    #titlecontent {
+        display: none;
+    }
+}
